@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/0-Splash/LoadingSingletones.unity
+    guid: 5945fcd6ffb7d6d418bf7707d259f5b5
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/1-MainMenu/MainMenu.unity
+    guid: bc4e4f21cf253f6408d35996fa099391
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/2-Tutorial/Template.unity
+    guid: 31730b8bc6687194a9d7cdfc1f453c58
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/3-Level1/Level1.unity
+    guid: f7bc649557ae34f4187da4f34e76ca91
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/4-Level1_2/Level1_2.unity
+    guid: 346261116f9e40a49aed91c0ad90b516
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/5-Level2/Level2.unity
+    guid: 6038a4dd0da204742af7e4b210f6705f
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/6-Level2_3/Level2_3.unity
+    guid: 359c12057e97bdf4684b81731f1b8098
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/7-Level3/Level3.unity
+    guid: c7eb4cc74b642f141b01d38608798898
+  - enabled: 1
+    path: Assets/Scenes/BuildFinal/8-CreditsFinal/CreditsFinale.unity
+    guid: b6c495ea7754a974984deaef92452c26
+  m_configObjects: {}

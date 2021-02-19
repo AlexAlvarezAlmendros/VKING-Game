@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 7285e5f601d27674b8b61caf14be56fb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bossWeapon: {instanceID: 0}
+  - stage2Weapon: {fileID: 11400000, guid: b1499b0f79cbf15419139d04eaa6bea2, type: 2}
+  - stage3Weapon: {fileID: 11400000, guid: 5e6b9688eec994f44a30899cdcfdfbbc, type: 2}
+  - droneSmallPrefab: {fileID: 7998610366021670281, guid: 499d48a23dc80ba4eb1dd559f6b986ee,
+      type: 3}
+  - droneBigPrefab: {fileID: 7998610366021670281, guid: 276ae6257bd30cc489263f95023a39c7,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e5a66e66cc5994cb773ef54cd91af8, type: 3}
+  m_Name: EnemyShotgun 1
+  m_EditorClassIdentifier: 
+  damage: 0
+  fireRate: 2
+  shootForce: 5
+  muzzleFlashFX: {fileID: 8361164653221994777, guid: 21cfbce812b87dc409132afd17158134,
+    type: 3}
+  muzzleFlashPositionOffset: {x: 0, y: 0.13, z: 0.75}
+  weaponMesh: {fileID: 4300000, guid: b4e0f14cb72dde44e8f1ebcead0f5414, type: 3}
+  bullets:
+  - {fileID: 136330, guid: 825dc38b3120ec243bf1cebbba0ba8dd, type: 3}
+  - {fileID: 136330, guid: 825dc38b3120ec243bf1cebbba0ba8dd, type: 3}
+  - {fileID: 136330, guid: 825dc38b3120ec243bf1cebbba0ba8dd, type: 3}
+  minSpread: 0.2
+  maxSpread: 0.2
+  xSpread: 1.8
+  ySpread: 0.2
+  isPartyShotgun: 0

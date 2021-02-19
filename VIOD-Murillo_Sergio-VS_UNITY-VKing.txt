@@ -1,0 +1,27 @@
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+	SERGIO MURILLO MENDEZ - 2º DAM-VIOD 2020/2021
+		VERTICAL SLICE UNITY
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+https://drive.google.com/file/d/1SJWzPShIBVLhRMY8t5Zm3r4-MfOGSVym/view
+
+
+::::::::::::::: CONTROLS :::::::::::::::
+Mouse1 -> Attack
+Mouse2 -> Move
+SHIFT -> Aim
+SHIFT + R -> Use drone skill.
+
+
+::::::::::::::: CHEATS :::::::::::::::
+SPACEBAR -> Spawn HEALTH PACK.
+K -> Enable skill cooldown to 1 second.
+Numbers 1, 2, 3, 4, 5, 6 -> Skip to that level.
+
+::::::::::::::: CREDITS :::::::::::::::
+Programación y Diseño: Sergio Murillo
+Modelos: https://syntystore.com/
+Sonidos: https://www.soundsnap.com/
+Musica: https://www.youtube.com/channel/UC7pSE1HaYbk1eBK6ixRsCfw
