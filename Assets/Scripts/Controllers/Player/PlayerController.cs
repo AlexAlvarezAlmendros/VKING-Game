@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public float weaponFireRate;                  //Valor en segundos
     public float weaponRange;
     public GameObject bulletTracer;
+    //Kajumbo
 
     //private GameObject bulletSpawn;
     //private float lastShootTimestamp;
