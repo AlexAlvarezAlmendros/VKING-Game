@@ -55,6 +55,16 @@ public static class Utils
         PR1N7
     }
 
+    //Enum de los tipos de facciones
+    public enum ElementType
+    {
+        DARKNESS,   //Loki Efecto relacionado con aturdir/cegar al objetivo
+        FIRE,       //Surt Effecto daño sobre tiempo
+        WIND,       //Njordor Effecto knockback
+        LIGHTNING,  //Thor EN DESAROLLO/DEBATE: Posibles effectos incluyen relentizar con menor daño sobre tiempo o daño en cadena/saltos de relampago.
+        LIFE        //Eir Effecto de robo de vida.
+    }
+
     // :: MUSIC ENUMS ::
 
     // Define el tipo de audio, para controlar volumenes
