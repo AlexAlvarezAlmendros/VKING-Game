@@ -7,9 +7,6 @@ using UnityEngine.AI;
 public class HPCounterController : MonoBehaviour
 {
 
-
-
-
     public bool invencible;
     public GameObject healthPointPrefab;
     public int initHealthPoints;
@@ -316,5 +313,23 @@ public class HPCounterController : MonoBehaviour
         
     }
 
+
+    public IEnumerator ModifyHealthFire(float duration) 
+    {
+        float initialDuration = duration / (initHealthPoints - 1);
+        float getDamage = initialDuration;
+        float counter = 0;
+        while (counter < duration)
+        {
+            getDamage -= Time.deltaTime;
+            counter += Time.deltaTime;
+            if (getDamage <= 0f)
+            {
+                getDamage = initialDuration;
+                ModifyHealth();
+            }
+        }
+        yield return null;
+    }
     
 }

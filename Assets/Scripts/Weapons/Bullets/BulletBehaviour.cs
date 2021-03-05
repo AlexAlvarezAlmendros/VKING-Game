@@ -32,12 +32,12 @@ public class BulletBehaviour : MonoBehaviour
             //:: DESTROY GAME OBJECTS ::
             if (other.tag == "Player" && transform.tag == "BulletEnemy")
             {
-                other.GetComponentInChildren<HPCounterController>().ModifyHealth();
+                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(100f));
             }
 
             if ((other.tag == "Boss" || other.tag == "Enemy" ) && transform.tag == "BulletPlayer")
             {
-                other.GetComponentInChildren<HPCounterController>().ModifyHealth();
+                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(100f)) ;
             }
 
             //:: DESTROY GAME OBJECTS ::
