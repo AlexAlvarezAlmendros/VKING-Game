@@ -314,22 +314,17 @@ public class HPCounterController : MonoBehaviour
     }
 
 
-    public IEnumerator ModifyHealthFire(float duration) 
+    public IEnumerator ModifyHealthFire(int duration) 
     {
-        float initialDuration = duration / (initHealthPoints - 1);
-        float getDamage = initialDuration;
-        float counter = 0;
-        while (counter < duration)
+        int counter = 0;
+        while (counter <= duration)
         {
-            getDamage -= Time.deltaTime;
-            counter += Time.deltaTime;
-            if (getDamage <= 0f)
-            {
-                getDamage = initialDuration;
-                ModifyHealth();
-            }
+            yield return new WaitForSeconds(1);
+            ModifyHealth();
+            counter++;
         }
-        yield return null;
+        //yield return null;
+
     }
     
 }

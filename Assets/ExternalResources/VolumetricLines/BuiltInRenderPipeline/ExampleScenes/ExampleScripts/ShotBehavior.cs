@@ -39,7 +39,8 @@ public class ShotBehavior : MonoBehaviour
         {
             GameObject explosion = (GameObject)Instantiate(
                 collisionExplosion, transform.position, transform.rotation);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Destroy(gameObject, 5);
             Destroy(explosion, 1f);
         }
 

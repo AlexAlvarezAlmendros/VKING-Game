@@ -19,7 +19,8 @@ public class BulletBehaviour : MonoBehaviour
             {
                 //:: DO HIT FX ::
                 GameObject explosionF = Instantiate(hitParticle, transform.position, transform.rotation);
-                Destroy(gameObject);
+                //gameObject.SetActive(false);
+                Destroy(gameObject, 5);
                 Destroy(explosionF, 0.5f);
             }
 
@@ -32,18 +33,19 @@ public class BulletBehaviour : MonoBehaviour
             //:: DESTROY GAME OBJECTS ::
             if (other.tag == "Player" && transform.tag == "BulletEnemy")
             {
-                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(100f));
+                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(3));
             }
 
             if ((other.tag == "Boss" || other.tag == "Enemy" ) && transform.tag == "BulletPlayer")
             {
-                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(100f)) ;
+                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthFire(3)) ;
             }
 
             //:: DESTROY GAME OBJECTS ::
             if (other.tag != "BulletEnemy")
             {
-                Destroy(gameObject);
+                //gameObject.SetActive(false);
+                Destroy(gameObject, 5);
             }
             Destroy(explosion, 0.5f);
 
