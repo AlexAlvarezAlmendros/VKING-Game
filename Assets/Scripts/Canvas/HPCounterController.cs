@@ -323,8 +323,15 @@ public class HPCounterController : MonoBehaviour
             ModifyHealth();
             counter++;
         }
-        //yield return null;
 
+    }
+
+    public IEnumerator ModifyHealthWind(int pushback)
+    {
+
+
+        
+        yield return null;
     }
     
 }
