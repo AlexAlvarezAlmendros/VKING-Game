@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitParticle: {fileID: 6583643015214012737, guid: d7687379c2cefec4b82b6e817a4813ab,
     type: 3}
+  elementType: 0
 --- !u!108 &10825254
 Light:
   m_ObjectHideFlags: 0

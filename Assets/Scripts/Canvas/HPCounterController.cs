@@ -8,6 +8,8 @@ public class HPCounterController : MonoBehaviour
 {
 
     public bool invencible;
+    private bool knockback;
+    private Vector3 vector3;
     public GameObject healthPointPrefab;
     public int initHealthPoints;
     public int actualDamage;
@@ -62,7 +64,7 @@ public class HPCounterController : MonoBehaviour
         }
 
     }
-
+    
     private void ActivateRagdoll(bool isRagdolled)
     {    
         //Colliders
@@ -104,7 +106,9 @@ public class HPCounterController : MonoBehaviour
         }
 
         actualDamage = 0;
-        
+        knockback = false;
+        navMeshAgent = GetComponentInParent<NavMeshAgent>();
+
         int id = 0;
         for (int i = 0; i < initHealthPoints; i++)
         {
@@ -124,6 +128,14 @@ public class HPCounterController : MonoBehaviour
         
     }
 
+    //private void FixedUpdate()
+    //{
+    //    if (!isBoss || !isTower)
+    //    {
+    //        navMeshAgent.velocity = vector3 * 8;
+    //    }
+
+    //}
 
     public void ModifHealthHeal()
     {
@@ -313,22 +325,38 @@ public class HPCounterController : MonoBehaviour
         
     }
 
-
-    public IEnumerator ModifyHealthFire(int duration) 
+    //Potency determina la probabilidad de que el elemento surta efecto
+    public IEnumerator ModifyHealthFire(int fireDuration, int elementPotency) 
     {
         int counter = 0;
-        while (counter <= duration)
+        while (counter <= fireDuration)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(2);
             ModifyHealth();
             counter++;
         }
 
     }
 
-    public IEnumerator ModifyHealthWind(int pushback)
+    public IEnumerator ModifyHealthWind(int slowPotency, int elementPotency)
     {
+        ModifyHealth();
 
+        knockback = true;
+        navMeshAgent.angularSpeed = 0;
+        navMeshAgent.acceleration = 20;
+
+        yield return new WaitForSeconds(0.2f);
+
+        navMeshAgent.speed = navMeshAgent.speed - slowPotency;
+
+        yield return new WaitForSeconds(1);
+
+        //reset a valores base
+        knockback = false;
+        navMeshAgent.speed = 2;
+        navMeshAgent.angularSpeed = 2500;
+        navMeshAgent.acceleration = 4;
 
         
         yield return null;

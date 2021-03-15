@@ -17,7 +17,7 @@ public class SensePlayerDrone : MonoBehaviour
 
     public NavMeshAgent navMeshAgent;
     public Vector3 destination;
-
+   
 
     bool m_HitDetect;
     private RaycastHit hitPlayerInsight;
@@ -29,6 +29,7 @@ public class SensePlayerDrone : MonoBehaviour
     public float shootDistance;
     public float normalSpeed;
     public float engageSpeed;
+    public float normalVelocity;
     
 
     // Start is called before the first frame update
@@ -38,6 +39,7 @@ public class SensePlayerDrone : MonoBehaviour
         npcMovement = true;
         npcAlive = true;
 
+        //navMeshAgent.velocity *= 0.75f;
 
         player = GameObject.FindGameObjectWithTag("Player");
 

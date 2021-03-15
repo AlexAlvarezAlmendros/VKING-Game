@@ -12,6 +12,8 @@ public abstract class Weapon: ScriptableObject
 
     protected float lastShootTimestamp;
 
+    public float elementPotency;
+
     // :: WEAPON BULLET CONTROLLER ::
     protected Transform bulletSpawn;   //WeaponController se lo asigna.
 
