@@ -6,6 +6,7 @@ public class BulletBehaviour : MonoBehaviour
 {
     public GameObject hitParticle;
     public Utils.ElementType elementType;
+    //private BoxCollider boxCollider;
     //private Renderer renderer;
     private void OnTriggerEnter(Collider other)
     {
@@ -21,8 +22,11 @@ public class BulletBehaviour : MonoBehaviour
             {
                 //:: DO HIT FX ::
                 GameObject explosionF = Instantiate(hitParticle, transform.position, transform.rotation);
+                //Intentos de hacer el gameobject desaparecer antes de destruirlo
                 //renderer = gameObject.GetComponent<Renderer>();
                 //renderer.enabled = false;
+                //boxCollider = gameObject.GetComponentInChildren<BoxCollider>();
+                //boxCollider.enabled = false;
                 Destroy(gameObject, 5);
                 Destroy(explosionF, 0.5f);
             }
@@ -70,11 +74,11 @@ public class BulletBehaviour : MonoBehaviour
                         {
                             if (other.tag == "Player" && transform.tag == "BulletEnemy")
                             {
-                                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthWind(1,1));
+                                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthWind(3,1));
                             }
                             if ((other.tag == "Boss" || other.tag == "Enemy") && transform.tag == "BulletPlayer")
                             {
-                                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthWind(1,1));
+                                StartCoroutine(other.GetComponentInChildren<HPCounterController>().ModifyHealthWind(3,1));
                             }
                         }
                     }

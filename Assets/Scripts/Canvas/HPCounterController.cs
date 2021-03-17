@@ -328,37 +328,49 @@ public class HPCounterController : MonoBehaviour
     //Potency determina la probabilidad de que el elemento surta efecto
     public IEnumerator ModifyHealthFire(int fireDuration, int elementPotency) 
     {
-        int counter = 0;
-        while (counter <= fireDuration)
+        ModifyHealth();
+
+        if (Random.value <= elementPotency)
         {
-            yield return new WaitForSeconds(2);
-            ModifyHealth();
-            counter++;
+            int counter = 0;
+            while (counter <= fireDuration)
+            {
+                yield return new WaitForSeconds(2);
+                ModifyHealth();
+                counter++;
+            }
         }
+
 
     }
 
     public IEnumerator ModifyHealthWind(int slowPotency, int elementPotency)
     {
         ModifyHealth();
+        if (Random.value <= elementPotency)
+        {
 
-        knockback = true;
-        navMeshAgent.angularSpeed = 0;
-        navMeshAgent.acceleration = 20;
+            if (!isTower)
+            {
+                knockback = true;
+                navMeshAgent.angularSpeed = 0;
+                navMeshAgent.acceleration = 20;
 
-        yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.2f);
 
-        navMeshAgent.speed = navMeshAgent.speed - slowPotency;
+                navMeshAgent.speed = navMeshAgent.speed - slowPotency;
 
-        yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(1);
 
-        //reset a valores base
-        knockback = false;
-        navMeshAgent.speed = 2;
-        navMeshAgent.angularSpeed = 2500;
-        navMeshAgent.acceleration = 4;
+                //reset a valores base
+                knockback = false;
+                navMeshAgent.speed = 2;
+                navMeshAgent.angularSpeed = 2500;
+                navMeshAgent.acceleration = 4;
+            }
 
-        
+        }
+
         yield return null;
     }
     
