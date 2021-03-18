@@ -1,43 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArmeroController : MonoBehaviour
 {
-    public enum TiposDeArmas { PISTOLA, ESCOPETA, METRALLETA, SNIPER, LANZACOHETES };
-    public enum TipoDeModificacion { FUEGO, AIRE, ROBO, ELECTRICIDAD, OSCURIDAD };
-
-    public struct Stats
-    {
-        public int daño;
-        public int velocidadDeRecarga;
-        public int cargador;
-        public int alcance;
-
-    }
-    public struct Arma {
-        public TiposDeArmas tipoDeArma;
-        public TipoDeModificacion tipoDeMod;
-        public bool equipado;
-        public bool bloqueado;
-        public Stats stats;
-
-    }
-    public Arma[] arma;
-
-
     //GameObjects que se modificaran dependiendo de l informacion de arriba//
     [SerializeField]
-    GameObject[] stats;
-    GameObject[] bloqued;
-    GameObject[] mods;
+    public GameObject[] stats;
+    [SerializeField]
+    public GameObject[] bloqued;
+    [SerializeField]
+    public GameObject[] mods;
 
     void Start()
     {
+        WeaponManager.Instance.initInitialWeapons();
+        fillInfoArmero();
     }
 
     void Update()
     {
-        
+    }
+    public void fillInfoArmero() {
+
+        //Fill Wepon Stats
+        for (int i = 0; i < 5; i++) { 
+            //stats[i].tal = a tal;
+        }
+
+        //Set Bloqued Weapons
+        for (int i = 0; i < 4; i++)
+        {
+            if (WeaponManager.Instance.armas[i].bloqueado)
+            {
+                bloqued[i].SetActive(false);
+            }
+            else {
+                bloqued[i].SetActive(true);
+            }
+        }
+
+        //Set Weapon Modifications
+        for (int i = 0; i < 5; i++)
+        {
+            stats[i].GetComponent<StatsController>().alcance.SetValueWithoutNotify(WeaponManager.Instance.armas[i].stats.alcance);
+            stats[i].GetComponent<StatsController>().daño.SetValueWithoutNotify(WeaponManager.Instance.armas[i].stats.daño);
+            stats[i].GetComponent<StatsController>().velocidadDeRecarga.SetValueWithoutNotify(WeaponManager.Instance.armas[i].stats.velocidadDeRecarga);
+            stats[i].GetComponent<StatsController>().cargador.SetValueWithoutNotify(WeaponManager.Instance.armas[i].stats.cargador);
+        }
+
     }
 }
